@@ -1,0 +1,28 @@
+## Testing: Hugging Face - ESG (6) Tutorial
+
+Testing CREATE MODEL
+```sql
+CREATE MODEL mindsdb.hf_esg_6
+PREDICT PRED
+USING
+engine = 'huggingface',
+task = 'text-classification',
+model_name = 'yiyanghkust/finbert-esg',
+input_column = 'text';
+```
+
+```sql
+![picture1](https://github.com/mindsdb/mindsdb/assets/75716439/b9ca2c2c-a0a0-4dbd-856d-43368ba63def)
+
+```
+
+Testing SELECT (making predictions)
+```sql
+SELECT *
+FROM mindsdb.models 
+WHERE name = 'hf_esg_6';
+```
+
+```sql
+![image](https://github.com/mindsdb/mindsdb/assets/75716439/cbe7d496-3585-4d73-8c92-eee068341cc7)
+```
